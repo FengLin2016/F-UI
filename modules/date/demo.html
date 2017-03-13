@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>日期demo</title>
+</head>
+<link rel="stylesheet" href="../reset.css">
+<link rel="stylesheet" href="date.css">
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="date.js"></script>
+<body>
+	
+	<input type="text" id="data1" class="a">
+	<p style="height: 500px;">asdsdasd</p>
+	<input type="text" id="data2" class="a">
+	<script>
+	
+		F.date({
+			ele:'#data1',
+			event:'click',//事件
+			format:'yyyy年MM月dd日 hh:mm:ss',
+			//minDate:F.date.now(-1),
+			//maxDate:F.date.now(+1),
+			legal:true,
+			iconHoliday:true,
+			disables:[{start:'2016-12-31',end:'2017-1-2'},
+					  {start:'2017-1-27',end:'2017-2-2'},
+					  {start:'2017-4-2',end:'2017-4-4'},
+					  {start:'2017-4-29',end:'2017-5-1'},
+					  {start:'2017-5-28',end:'2017-5-30'},
+					  {start:'2017-5-28',end:'2017-5-30'},
+					  {start:'2017-10-1',end:'2017-10-8'}],
+			allows:['2017-1-22','2017-2-4','2017-4-1','2017-5-27','2017-9-30'],
+			time:true,
+			today:true,
+			selectedFn:function(selectedTime){
+				//alert(new Date(selectedTime).Format('yyyy-MM-dd'));
+			}
+		});
+
+		F.date({
+			ele:'#data2',
+			format:'yyyy年MM月dd日',
+			//minDate:F.date.now(-1),
+			//maxDate:F.date.now(+1),
+			legal:true,
+			iconHoliday:true,
+			disables:[{start:'2016-12-31',end:'2017-1-2'},
+					  {start:'2017-1-27',end:'2017-2-2'},
+					  {start:'2017-4-2',end:'2017-4-4'},
+					  {start:'2017-4-29',end:'2017-5-1'},
+					  {start:'2017-5-28',end:'2017-5-30'},
+					  {start:'2017-5-28',end:'2017-5-30'},
+					  {start:'2017-10-1',end:'2017-10-8'}],
+			allows:['2017-1-22','2017-2-4','2017-4-1','2017-5-27','2017-9-30'],
+			time:true,
+			today:true,
+			selectedFn:function(selectedTime){
+				//alert(new Date(selectedTime).Format('yyyy-MM-dd'));
+			}
+		});
+
+		
+	</script>
+</body>
+</html>

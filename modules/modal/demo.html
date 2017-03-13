@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui" />
+	<meta name="format-detection" content="telephone=no" />
+	<title>弹出框demo</title>
+</head>
+<link rel="stylesheet" href="../reset.css">
+<link rel="stylesheet" href="modal.css">
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="../common.js"></script>
+<script src="modal.js"></script>
+<body>
+	<a id="btn">弹出</a>
+</body>
+<script>
+	$("#btn").click(function(){
+		F.modal({
+			title:'历史',
+			//fixedWidth:true,
+			content:'<span onclick="a()">测试文字</span>',
+			cls:'name',
+			time:0,
+			//position:5,
+			//mask:false,
+			style:'width:static;',
+			//btn:['我知道了'],
+			btnFns:[
+				function(){
+					//alert('确定');
+				},
+				function(){
+					//alert('取消');
+				}
+			],//第二个函数
+			success:function(obj){
+				setTimeout(function(){
+					//obj.close();
+				},5000);
+				//alert('加载成功');
+			}//加载成功函数
+		});
+	});
+
+
+	function a(){
+		F.modal({
+			title:'第二个弹窗',
+			//fixedWidth:true,
+			content:'第二个弹窗',
+			cls:'name',
+			time:0,
+			FIndex:0,
+			position:5,
+			//mask:false,
+			style:'width:static;',
+			//btn:['我知道了'],
+			btnFns:[
+				function(){
+					//alert('确定');
+				},
+				function(){
+					//alert('取消');
+				}
+			],//第二个函数
+			success:function(obj){
+				setTimeout(function(){
+					//obj.close();
+				},5000);
+				//alert('加载成功');
+			}//加载成功函数
+		});
+	}
+</script>
+</html>

@@ -1,0 +1,75 @@
+@keyframes load{
+	0%   {transform:scale(0.7,0.7); opacity: 0;}
+	50%  {transform:scale(0.85,0.85);opacity: 0.5;}
+	100% {transform:scale(1,1);opacity: 1;}
+}
+@keyframes out{
+	0%   {transform:scale(1,1); opacity: 1;}
+	50%  {transform:scale(0.85,0.85); opacity: 0.5;}
+	100% {transform:scale(0.7,0.7); opacity: 0;}
+}
+
+.F-ui-date{position: fixed; padding:5px; border:1px solid #ccc; background:#fff;}
+.F-ui-date>div{float:left;width:50%; font-size: 0; margin-bottom: 5px;text-align: right;line-height: 22px;}
+.F-ui-date>div:first-child{text-align: left;}
+.F-ui-date>div span{padding:0 9px; font-size: 14px;  vertical-align: top;cursor:pointer;}
+.F-ui-date>div i{font-size: 20px; cursor:pointer; border:1px solid #ccc;line-height: 22px; vertical-align: top;}
+.F-ui-date table{clear: both; font:normal 12px/30px 'microsoft yahei';border-left:1px solid #ccc;border-top:1px solid #ccc;}
+.F-ui-date table th{background:#ccc;text-align: center; border-bottom: 1px solid #ccc; border-right:1px solid #ccc;}
+.F-ui-date table th.week{color:#be132b;}
+.F-ui-date table td{position: relative;width:30px; border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+.F-ui-date table td:nth-child(1) a,.F-ui-date table td:nth-child(7) a{color:#be132b}
+.F-ui-date table td a{display: block; text-decoration: none; text-align: center; color:#000;}
+.F-ui-date table td a.now{background: #be132b; color:#fff;margin:-1px; width:32px; height: 32px;}
+.F-ui-date table td a.lastMonth,.F-ui-date table td a.nextMonth{background:#f5f5f5; color:#999;}
+.F-ui-date table td a.disable{background:#f5f5f5; color:#999; cursor: text ; }
+.F-ui-date table td a.selected{background:#ddd;}
+/*添加图标*/
+.F-ui-date table td  span{position: absolute; right:2px; top:2px;font:normal 12px/12px 'iconfont';}
+.F-ui-date table td a.rest + span:after{content:"\e61c";color:#999;}
+.F-ui-date table td a.work + span:after{content:"\e600";color:#be132b;}
+.F-ui-date table td a.newYear + span:after{content:"\e698;";color:#be132b;}
+.F-ui-date table td a.spring + span:after{content:"\e62b";color:#be132b;}
+.F-ui-date table td a.heat + span:after{content:"\e6ac";color:#be132b;}
+.F-ui-date table td a.woman + span:after{content:"\e6a1";color:#be132b;}
+.F-ui-date table td a.fool + span:after{content:"\e601";color:#be132b;}
+.F-ui-date table td a.dragon + span:after{content:"\e69e";color:#be132b;font-size: 14px;}
+.F-ui-date table td a.qingming + span:after{content:"\e69b";color:#be132b;}
+.F-ui-date table td a.labor + span:after{content:"\e602";color:#be132b; font-size: 14px;}
+.F-ui-date table td a.youth + span:after{content:"\e723";color:#be132b;}
+.F-ui-date table td a.children + span:after{content:"\e69f";color:#be132b;}
+.F-ui-date table td a.party + span:after{content:"\e633";color:#be132b;}
+.F-ui-date table td a.army + span:after{content:"\e609";color:#be132b;}
+.F-ui-date table td a.counter + span:after{content:"\e603";color:#be132b;}
+.F-ui-date table td a.teacher + span:after{content:"\e6a5";color:#be132b;}
+.F-ui-date table td a.national + span:after{content:"\e6b2";color:#be132b;}
+.F-ui-date table td a.ruffian + span:after{content:"\e645";color:#be132b;}
+.F-ui-date table td a.safety + span:after{content:"\e62a";color:#be132b;}
+.F-ui-date table td a.christmas + span:after{content:"\e697";color:#be132b;}
+
+
+.F-ui-date >div.selectList{position:absolute;left:23px; height:200px;border:1px solid #ccc; top:25px;width:70px; overflow:hidden;z-index: 999;background:#fff; }
+.F-ui-date >div.selectList ul{width:75px; padding-right:15px; height:200px; overflow-y: scroll;}
+.F-ui-date >div.selectList ul li{ width:70px;   text-align: center; font-size: 14px; line-height: 25px; color:#999;}
+.F-ui-date >div.selectList ul li.select{cursor:pointer ; color:#000;}
+.F-ui-date >div.selectList#monthList{left:auto;right:26px; width:48px; }
+.F-ui-date >div.selectList#monthList ul{width:55px;}
+.F-ui-date >div.selectList#monthList ul li{width:50px;}
+.F-ui-date >div.selectList#hourList{left:35px; top:auto;right:auto; width:48px;bottom: 26px; }
+.F-ui-date >div.selectList#hourList ul{width:55px;}
+.F-ui-date >div.selectList#hourList ul li{width:50px;}
+.F-ui-date >div.selectList#minuteList{left:55px; top:auto; right:auto;width:48px;bottom: 26px; }
+.F-ui-date >div.selectList#minuteList ul{width:55px;}
+.F-ui-date >div.selectList#minuteList ul li{width:50px;}
+.F-ui-date >div.selectList#secondList{left:75px; top:auto; right:auto;width:48px;bottom: 26px; }
+.F-ui-date >div.selectList#secondList ul{width:55px;}
+.F-ui-date >div.selectList#secondList ul li{width:50px;}
+
+.F-ui-date .F-ui-date-time{overflow:hidden;margin:5px 0 0;width:100%;}
+.F-ui-date .F-ui-date-time .hms{float:left; border:1px solid #ccc; }
+.F-ui-date .F-ui-date-time .hms li{overflow:hidden;float:left;width:28px; font-size: 12px; line-height: 17px; vertical-align: top;}
+.F-ui-date .F-ui-date-time .hms li.title{width:30px; background:#ccc; text-align: center;line-height: 21px;}
+.F-ui-date .F-ui-date-time .hms li input{float:left;width:22px; text-align: center; border:0;line-height: 21px; cursor:pointer ;}
+.F-ui-date .F-ui-date-time .time-btn{float:right;overflow: hidden;}
+.F-ui-date .F-ui-date-time .time-btn a{font-size: 12px;  padding:3px 5px; background:#ccc;margin-right:5px; cursor:pointer ;}
+.F-ui-date .F-ui-date-time .time-btn a:last-child{margin-right: 0;}
